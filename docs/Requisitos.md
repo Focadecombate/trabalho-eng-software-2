@@ -1,3 +1,10 @@
+## Usuários/Atores
+
+- Administrador
+- Apostador do sistema
+- Sistema
+
+
 ## Funcionais
 1. Calcular o valor da aposta para um apostador vencedor  
     - O sistema deve calcular o valor que N apostadores vão ganhar quando estes forem vencedores de uma aposta. 
