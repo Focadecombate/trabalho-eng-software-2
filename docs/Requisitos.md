@@ -11,14 +11,16 @@
 5. O Administrador deve registrar apostas abertas para apostadores
     - O sistema deve permitir que novas apostas sejam abertas para apostadores poderem apostar nelas
 6. O Administrador deve poder Gerenciar {entidades}
-    -{entidade} = [esporte | categoria | aposta aberta]
-    -Gerenciar aqui significa um CRUD + listar
+    - {entidade} = [esporte | categoria | aposta aberta]
+    - Gerenciar aqui significa um CRUD + listar
 7. O Apostador deve poder interagir com {entidade}
     - {entidade} = [esporte | categoria | aposta aberta]
     - Interação aqui significa filtrar, listar, procurar e apostar em uma {entidade}
 8. O apostador deve poder adicionar fundos à conta
 9. O apostador deve poder sacar fundos da conta
 10. O sistema deve mostrar Leaderboard com Maiores apostadores
+11. O sistema deve apresentar as apostas mais procuradas do site
+
 
 
 ## Não funcionais
