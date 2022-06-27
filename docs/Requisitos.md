@@ -27,7 +27,12 @@
 9. O apostador deve poder sacar fundos da conta [ok]
 10. O sistema deve mostrar Leaderboard com Maiores apostadores [Não entrega no MVP]
 11. O sistema deve apresentar as apostas mais procuradas do site [Não entrega no MVP]
-
+12. Tela de Admin (CRUD)
+13. Tela Home com listagem de apostas
+14. Tela de Adicionar fundos
+15. Tela de aposta
+16. Tela de criar conta de apostador
+17. Tela de Login
 
 
 ## Não funcionais
