@@ -6,6 +6,7 @@ import { AddFunds } from "./page/addFunds";
 import { User } from "./page/user";
 import { Bet } from "./page/bet";
 import { ResponsiveAppBar } from "./components/sideMenu";
+import { AdminPage } from "./page/admin";
 
 export function App() {
   const queryClient = new QueryClient({});
@@ -21,6 +22,7 @@ export function App() {
           <Route path="/user/funds" element={<AddFunds />} />
           <Route path="/user/bets" element={<AddFunds />} />
           <Route path="/user" element={<User />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </QueryClientProvider>
     </>

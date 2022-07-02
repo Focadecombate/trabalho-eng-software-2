@@ -1,10 +1,20 @@
-import { Avatar, Grid, Paper, TextField, Typography } from "@mui/material";
+import {
+  Avatar,
+  Button,
+  Grid,
+  Paper,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { useQuery } from "react-query";
+import { useNavigate } from "react-router-dom";
 import { PageContainer } from "../components/pageContainer";
 import { generateUser } from "../mock/data";
 
 export function User() {
   const { data, error, isLoading } = useQuery("/user", generateUser);
+
+  const navigation = useNavigate();
 
   if (isLoading) {
     return <Typography variant="h5">Loading...</Typography>;
@@ -53,6 +63,17 @@ export function User() {
             disabled
             value={data.nomeDoUsuario}
           />
+        </Grid>
+
+        <Grid item xs={4}>
+          <Button
+            variant="contained"
+            fullWidth
+            type="button"
+            onClick={() => navigation("/user/funds")}
+          >
+            Adicionar Fundos
+          </Button>
         </Grid>
       </Grid>
     </PageContainer>
