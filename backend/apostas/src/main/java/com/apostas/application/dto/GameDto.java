@@ -1,5 +1,6 @@
 package com.apostas.application.dto;
 
+import com.apostas.domain.enumutilities.CategoryEnum;
 import com.apostas.domain.enumutilities.ResultEnum;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -17,15 +18,17 @@ public class GameDto implements Serializable {
     private double oddTeamAway;
     private double oddTie;
     private String campeonato;
+    private CategoryEnum category;
     private LocalDate created_at = LocalDate.now();
     private LocalDate updated_at;
-    private LocalDate limiteAposta;
-    private LocalDate dataTermino;
+    private boolean terminou;
+    private Integer pontuacaoTimeHome;
+    private Integer pontuacaoTimeAway;
 
     public GameDto() {
     }
 
-    public GameDto(Long id, Long idTeamHome, Long idTeamAway, ResultEnum resultBet, double oddTeamHome, double oddTeamAway, double oddTie, String campeonato, LocalDate created_at, LocalDate updated_at, LocalDate limiteAposta, LocalDate dataTermino) {
+    public GameDto(Long id, Long idTeamHome, Long idTeamAway, ResultEnum resultBet, double oddTeamHome, double oddTeamAway, double oddTie, String campeonato, CategoryEnum category, LocalDate created_at, LocalDate updated_at, boolean terminou, Integer pontuacaoTimeHome, Integer pontuacaoTimeAway) {
         this.id = id;
         this.idTeamHome = idTeamHome;
         this.idTeamAway = idTeamAway;
@@ -34,10 +37,12 @@ public class GameDto implements Serializable {
         this.oddTeamAway = oddTeamAway;
         this.oddTie = oddTie;
         this.campeonato = campeonato;
+        this.category = category;
         this.created_at = created_at;
         this.updated_at = updated_at;
-        this.limiteAposta = limiteAposta;
-        this.dataTermino = dataTermino;
+        this.terminou = terminou;
+        this.pontuacaoTimeHome = pontuacaoTimeHome;
+        this.pontuacaoTimeAway = pontuacaoTimeAway;
     }
 
     public Long getId() {
@@ -104,6 +109,14 @@ public class GameDto implements Serializable {
         this.campeonato = campeonato;
     }
 
+    public CategoryEnum getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryEnum category) {
+        this.category = category;
+    }
+
     public LocalDate getCreated_at() {
         return created_at;
     }
@@ -120,20 +133,28 @@ public class GameDto implements Serializable {
         this.updated_at = updated_at;
     }
 
-    public LocalDate getLimiteAposta() {
-        return limiteAposta;
+    public boolean isTerminou() {
+        return terminou;
     }
 
-    public void setLimiteAposta(LocalDate limiteAposta) {
-        this.limiteAposta = limiteAposta;
+    public void setTerminou(boolean terminou) {
+        this.terminou = terminou;
     }
 
-    public LocalDate getDataTermino() {
-        return dataTermino;
+    public Integer getPontuacaoTimeHome() {
+        return pontuacaoTimeHome;
     }
 
-    public void setDataTermino(LocalDate dataTermino) {
-        this.dataTermino = dataTermino;
+    public void setPontuacaoTimeHome(Integer pontuacaoTimeHome) {
+        this.pontuacaoTimeHome = pontuacaoTimeHome;
+    }
+
+    public Integer getPontuacaoTimeAway() {
+        return pontuacaoTimeAway;
+    }
+
+    public void setPontuacaoTimeAway(Integer pontuacaoTimeAway) {
+        this.pontuacaoTimeAway = pontuacaoTimeAway;
     }
 
     @Override
@@ -142,21 +163,21 @@ public class GameDto implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         GameDto entity = (GameDto) o;
         return Objects.equals(this.id, entity.id) &&
-                Objects.equals(this.oddTeamHome, entity.oddTeamHome) &&
-                Objects.equals(this.idTeamAway, entity.idTeamAway) &&
                 Objects.equals(this.resultBet, entity.resultBet) &&
                 Objects.equals(this.oddTeamHome, entity.oddTeamHome) &&
                 Objects.equals(this.oddTeamAway, entity.oddTeamAway) &&
                 Objects.equals(this.oddTie, entity.oddTie) &&
                 Objects.equals(this.campeonato, entity.campeonato) &&
+                Objects.equals(this.category, entity.category) &&
                 Objects.equals(this.created_at, entity.created_at) &&
                 Objects.equals(this.updated_at, entity.updated_at) &&
-                Objects.equals(this.limiteAposta, entity.limiteAposta) &&
-                Objects.equals(this.dataTermino, entity.dataTermino);
+                Objects.equals(this.terminou, entity.terminou) &&
+                Objects.equals(this.pontuacaoTimeHome, entity.pontuacaoTimeHome) &&
+                Objects.equals(this.pontuacaoTimeAway, entity.pontuacaoTimeAway);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, idTeamHome, idTeamAway, resultBet, oddTeamHome, oddTeamAway, oddTie, campeonato, created_at, updated_at, limiteAposta, dataTermino);
+        return Objects.hash(id, resultBet, oddTeamHome, oddTeamAway, oddTie, campeonato, category, created_at, updated_at, terminou, pontuacaoTimeHome, pontuacaoTimeAway);
     }
 }

@@ -14,6 +14,7 @@ public class BetDto implements Serializable {
     private Long idUser;
     private boolean win;
     private String betValue;
+    private List<GameResultDto> gameResultDtoList;
     private LocalDate created_at = LocalDate.now();
     private LocalDate updated_at;
     private LocalDate terminoAposta;
@@ -85,6 +86,14 @@ public class BetDto implements Serializable {
 
     public void setUpdated_at(LocalDate updated_at) {
         this.updated_at = updated_at;
+    }
+
+    public List<GameResultDto> getGameResultDtoList() {
+        return gameResultDtoList;
+    }
+
+    public void setGameResultDtoList(List<GameResultDto> gameResultDtoList) {
+        this.gameResultDtoList = gameResultDtoList;
     }
 
     public LocalDate getTerminoAposta() {

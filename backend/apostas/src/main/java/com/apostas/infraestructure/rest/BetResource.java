@@ -3,7 +3,6 @@ package com.apostas.infraestructure.rest;
 import com.apostas.application.dto.BetDto;
 import com.apostas.application.representation.BetRepresentation;
 import com.apostas.application.services.BetService;
-import com.apostas.domain.aposta.Bet;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 
 import javax.inject.Inject;
@@ -53,6 +52,15 @@ public class BetResource {
     public Response updateBet(@PathParam("id") Long id, BetDto betDto) {
         betDto.setId(id);
         this.betService.updateBet(betDto);
+        return Response.ok().build();
+    }
+
+    @PATCH
+    @Path("award/{id}")
+    @Transactional
+    @Operation(summary = "Solicita a premiação de uma aposta ganha pelo usuário.")
+    public Response awardBet(@PathParam("id") Long idBet) {
+        this.betService.awardBet(idBet);
         return Response.ok().build();
     }
 
