@@ -50,4 +50,12 @@ public class GameService {
 
         game.closedGame(closedGameDto);
     }
+
+    public List<GameRepresentation> getGameByCategoria(String categoria) {
+        List<Game> gameListCategoria = this.gameRepository.getByCatorgory(categoria);
+
+        List<GameRepresentation> gameRepresentationList = gameListCategoria.stream().map(GameRepresentation::new).collect(Collectors.toList());
+
+        return gameRepresentationList;
+    }
 }

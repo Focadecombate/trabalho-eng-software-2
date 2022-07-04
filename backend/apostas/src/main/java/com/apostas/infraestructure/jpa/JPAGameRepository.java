@@ -41,4 +41,9 @@ public class JPAGameRepository implements GameRepository {
     public List<Game> all() {
         return this.panacheGameRepository.listAll();
     }
+
+    @Override
+    public List<Game> getByCatorgory(String categoria) {
+        return this.panacheGameRepository.getByCatogory(categoria);
+    }
 }
